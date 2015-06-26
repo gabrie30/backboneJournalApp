@@ -1,0 +1,6 @@
+<h1>Showing one Post </h1>
+<p><%= post.get("title") %></p>
+<%= post.get("body") %>
+<br>
+<a href="#/">Back to index</a>
+<a href="#/posts/edit/<%= post.get("id")%>" id="edit_post">Edit Post</a>

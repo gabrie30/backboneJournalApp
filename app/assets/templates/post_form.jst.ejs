@@ -1,0 +1,13 @@
+<% if (post === undefined) { postTitle = "" ; button = "New Post"} else { postTitle = post.get("title");postBody = post.get("body"); button = "Edit Post"} %>
+<%= console.log(post) %>
+<h1><%=button%></h1>
+<br>
+<form>
+  <input type="text" name="post[title]" id="post_title" value='<%=postTitle%>'>
+  <label for="post_title">Post Title</label><br>
+
+  <input type="text-area" name="post[body]" id="post_body" value='<%=postBody%>'>
+  <label for="post_title">Post Body</label><br>
+
+  <button type="submit" id="edit_post"><%= button%></button>
+</form>
