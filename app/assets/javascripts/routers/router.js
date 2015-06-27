@@ -2,7 +2,7 @@ window.JournalApp.Routers.Router = Backbone.Router.extend({
 
   initialize: function(options) {
     this.$rootEl = options.$rootEl;
-    this.posts = new JournalApp.Collections.Posts();
+    this.postsAll = new JournalApp.Collections.Posts();
     this.posts = options.posts;
   },
 
@@ -53,7 +53,7 @@ window.JournalApp.Routers.Router = Backbone.Router.extend({
 
  show: function(id) {
     
-    this.posts.fetch({
+    this.postsAll.fetch({
       success: function() {
         var post = new JournalApp.Views.Show({collection: this.posts, id: id});
         this._swapView(post);

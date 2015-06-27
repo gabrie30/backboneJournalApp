@@ -1,8 +1,8 @@
-<h1>Showing one Post </h1>
+<h1>Post Viewer</h1>
 <h3>Title: </h3>
-<p><%= post.get("title") %></p>
+<p class="post-title"><%= post.get("title") %></p>
 <h3>Post: </h3>
-<%= post.get("body") %>
+<div class="post-body"><%= post.get("body") %></div>
 <br><br><br>
 <a href="#/">Back to index</a>
 <a href="#/posts/edit/<%= post.get("id")%>" id="edit_post">Edit Post</a>

@@ -1,4 +1,12 @@
+<% var title = post.get("title") %>
+<% if (title.length > 23) { %>
+<% title = title.slice(0, 23) + "..." %>
+<% } else { %>
+<% title = post.get("title") %>
+<% } %>
 
-<a href="#/posts/<%= post.id %>"><%= post.get("title") %></a>
+
+
+<a href="#/posts/<%= post.id %>"><%= title %></a>
 <button type="submit" id="delete-btn">Delete</button>
 <button type="submit" id="edit-post">Edit Post</button>

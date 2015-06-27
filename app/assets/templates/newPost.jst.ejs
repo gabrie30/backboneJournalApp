@@ -1,11 +1,11 @@
 <h1>New Post</h1>
 <br>
-<form>
-  <input type="text" name="post[title]" id="post_title" value=''>
-  <label for="post_title">Post Title</label><br>
+<form id="submit-post">
+ <label for="post_title">Post Title</label><br>
+  <input type="text" name="post[title]" id="post_title" value=''><br><br>
 
-  <input type="text-area" name="post[body]" id="post_body" value=''>
-  <label for="post_title">Post Body</label><br>
+ <label for="post_title">Post Body</label><br>
+  <textarea rows="15" cols="55" name="post[body]" for="submit-post" id="post_body" value=''></textarea>
 
   <button type="submit" id="edit_post">New Post</button>
 </form>
