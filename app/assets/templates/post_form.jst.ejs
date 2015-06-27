@@ -1,4 +1,4 @@
-<% if (post === undefined) { postTitle = "" ; button = "New Post"} else { postTitle = post.get("title");postBody = post.get("body"); button = "Edit Post"} %>
+<% if (post == undefined) { postTitle = "" ; button = "New Post"} else { postTitle = post.get("title");postBody = post.get("body"); button = "Edit Post"} %>
 <%= console.log(post) %>
 <h1><%=button%></h1>
 <br>

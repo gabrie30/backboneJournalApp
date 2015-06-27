@@ -2,12 +2,12 @@ window.JournalApp.Routers.Router = Backbone.Router.extend({
 
   initialize: function(options) {
     this.$rootEl = options.$rootEl;
-    // this.posts = new JournalApp.Collections.Posts();
+    this.posts = new JournalApp.Collections.Posts();
     this.posts = options.posts;
   },
 
  routes: {
-  "": "index",
+  "": "root",
   "posts/new": "newPost",
   "posts/edit/:id": "edit",
   "posts/:id": "show",
@@ -25,27 +25,42 @@ window.JournalApp.Routers.Router = Backbone.Router.extend({
   this._swapView(editPost);
  },
 
- index: function() {
-    this.posts.fetch({
-      reset: true,
-      success: function () {
-        
-        // var allPosts = new JournalApp.Views.PostsIndex({collection: this.posts});
-        // this._swapView(allPosts);
-        // $("#sidebar").html(allPosts.render().el);
+ root: function() {
 
-        // var index = new JournalApp.Views.PostsIndex({collection: posts});
-        // index.render();
-      }.bind(this)
-    });
+    // This router method should remove the router's _currentView, 
+    // if one exists, and then null out the _currentView.
+
+    if (this.currentView) {
+      this.currentView.remove();
+      this.currentView = null;
+    }
+    // this.posts.fetch({
+    //   reset: true,
+    //   success: function () {
+        
+    //     // var allPosts = new JournalApp.Views.PostsIndex({collection: this.posts});
+    //     // this._swapView(allPosts);
+    //     // $("#sidebar").html(allPosts.render().el);
+
+    //     // var index = new JournalApp.Views.PostsIndex({collection: posts});
+    //     // index.render();
+    //   }.bind(this)
+    // });
     // var index = new JournalApp.Views.PostsIndex({collection: });
     // index.render();
 
  },
 
  show: function(id) {
-    var post = new JournalApp.Views.Show({model: this.posts.getOrFetch(id)});
-    this._swapView(post);
+    
+    this.posts.fetch({
+      success: function() {
+        var post = new JournalApp.Views.Show({collection: this.posts, id: id});
+        this._swapView(post);
+      }.bind(this)
+    });
+
+    // var post = new JournalApp.Views.Show({model: this.posts.getOrFetch(id)});
     // post.render();
     // $("body").html(post.render().$el);
 

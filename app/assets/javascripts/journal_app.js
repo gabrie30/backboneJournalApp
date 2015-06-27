@@ -5,8 +5,8 @@ window.JournalApp = {
   Routers: {},
   initialize: function() {
 
-    $('<div id="sidebar">');
-    $('<div id="content">');
+    // $('<div id="sidebar">');
+    // $('<div id="content">');
 
     //try to put the sidebar index here...
     this.posts = new JournalApp.Collections.Posts();

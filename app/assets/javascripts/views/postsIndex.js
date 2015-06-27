@@ -9,7 +9,7 @@ JournalApp.Views.PostsIndex = Backbone.View.extend({
   },
 
   events: {
-    "click #new_post": "newPost"
+    "click #new_post": "newPost",
   },
 
   newPost: function() {

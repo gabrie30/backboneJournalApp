@@ -1,7 +1,8 @@
 window.JournalApp.Views.Show = Backbone.View.extend({
 
-  initialize: function() {
+  initialize: function(options) {
     this.listenTo(this.model, "edit", this.makeChange);
+    this.id = options.id;
   },
 
   events: {
@@ -11,16 +12,17 @@ window.JournalApp.Views.Show = Backbone.View.extend({
   template: JST['show'],
 
   deletePost: function() {
-    this.model.destroy();
+    this.collection.getOrFetch(this.id).destroy();
+    Backbone.history.navigate("", {trigger: true});
   },
 
   makeChange: function() {
     // need to save the new data when user submits new info
-    this.model.save();
+    this.collection.getOrFetch(id).save();
   },
 
   render: function(){
-    var content = this.template({post: this.model});
+    var content = this.template({post: this.collection.getOrFetch(this.id)});
     this.$el.html(content);
     return this;
   },

@@ -4,7 +4,7 @@ window.JournalApp.Views.NewPost = Backbone.View.extend({
     "submit form": "newPost"
   },
 
-  template: JST["post_form"],
+  template: JST["newPost"],
 
   newPost: function(event) {
     event.preventDefault();
