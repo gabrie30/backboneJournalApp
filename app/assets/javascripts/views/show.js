@@ -4,11 +4,15 @@ window.JournalApp.Views.Show = Backbone.View.extend({
     this.listenTo(this.model, "edit", this.makeChange);
   },
 
-// events: {
-//   "click #edit_post":"editPost",
-// },
+  events: {
+    "click #delete-btn":"deletePost",
+  },
 
   template: JST['show'],
+
+  deletePost: function() {
+    this.model.destroy();
+  },
 
   makeChange: function() {
     // need to save the new data when user submits new info

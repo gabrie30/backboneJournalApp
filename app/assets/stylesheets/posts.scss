@@ -5,16 +5,19 @@
 #sidebar {
   position: absolute;
   height: 100%;
-  
+  border: 5px solid black;
+  padding: 10px;
   background-color: yellow;
 }
 
 #content {
   position: absolute;
-  left:300px;
+  left:350px;
   background-color: pink;
   height: auto;
   width: auto;
+  border: 5px solid black;
+  padding: 10px;
 
 }
 
@@ -25,4 +28,12 @@ body {
 h1 {
   text-align: center;
   background-color: green;
+}
+
+#delete-btn {
+  float: right;
+}
+
+#edit-post {
+  float: right;
 }

@@ -12,7 +12,7 @@ JournalApp.Views.PostIndexItem = Backbone.View.extend({
   },
 
   removePost: function(event) {
-    this.model.collection.remove(this.model);
+    this.model.destroy();
   },
 
   render: function() {

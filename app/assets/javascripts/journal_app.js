@@ -16,7 +16,7 @@ window.JournalApp = {
         var allPosts = new JournalApp.Views.PostsIndex({collection: this.posts});
         $("#sidebar").html(allPosts.render().el);
       }.bind(this)
-    })
+    });
     
 
     // var sidebar = new JournalApp.Views.PostsIndex();

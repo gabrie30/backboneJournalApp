@@ -21,9 +21,10 @@ window.JournalApp.Views.PostForm = Backbone.View.extend({
     var params = $(event.currentTarget).serializeJSON()["post"];
     this.model.set(params);
     this.model.save({}, {
+      wait: true,
       success: function(){
-        Backbone.history.navigate("", {trigger: true});
-      }
+        Backbone.history.navigate(("posts/" + this.model.id), {trigger: true});
+      }.bind(this)
     });
   },
 });

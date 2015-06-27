@@ -13,7 +13,7 @@ window.JournalApp.Views.NewPost = Backbone.View.extend({
     this.model.save({},{
       success: function() {
         this.collection.add(this.model);
-        Backbone.history.navigate("", {trigger:true});
+        Backbone.history.navigate(("/posts/"+this.model.id), {trigger:true});
         alert("You've submitted a post!");
       }.bind(this)
     });

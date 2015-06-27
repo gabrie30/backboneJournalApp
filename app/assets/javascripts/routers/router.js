@@ -18,9 +18,6 @@ window.JournalApp.Routers.Router = Backbone.Router.extend({
   var newPost = new JournalApp.Models.Post();
   var newPostView = new JournalApp.Views.NewPost({model: newPost, collection: this.posts});
   this._swapView(newPostView);
-
-  
-
  },
 
  edit: function(id) {
