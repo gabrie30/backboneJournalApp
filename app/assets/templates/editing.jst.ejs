@@ -1,0 +1,14 @@
+<h1>Post Viewer</h1>
+<h3>Title: </h3>
+<p class="post-title"><%= post.get("title") %></p>
+<h3>Post: </h3>
+<textarea id="edit-post-body" rows="15" cols="96"><%= post.get("body") %></textarea>
+<br><br><br>
+<a href="#/">Back to index</a>
+<a href="#/posts/edit/<%= post.get("id")%>" id="edit_post">Edit Post</a>
+<button type="submit" id="delete-btn">Delete Post</button>
+
+
+
+
+<button class="editingPost">Make Changes</button>
